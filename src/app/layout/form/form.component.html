@@ -1,0 +1,33 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Conductores'" [icon]="'fa-edit'"></app-page-header>
+
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Listado de conductores
+                    <button class="btn btn-success pull-right" [routerLink]="['/crearruta']">Crear conductor</button>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Identificación</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <p class="text-center">Error obteniendo conductores</p>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- /.row -->
+</div>

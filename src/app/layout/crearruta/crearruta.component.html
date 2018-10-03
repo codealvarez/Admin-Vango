@@ -1,0 +1,98 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Crear ruta'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Crear ruta
+                    <button class="btn btn-success pull-right" (click)="guardar()">Guardar ruta</button>
+                </div>
+                <div class="card-body table-responsive">
+                    <div class="row">
+                        <div class="col col-xl-12 col-lg-12">
+                            <h4>Información de la ruta</h4>
+                            <form role="form">
+
+                                <div class="form-group has-success">
+                                    <label class="form-control-label" for="inputSuccess">Nombre de la ruta</label>
+                                    <input type="text" class="form-control form-control-success" id="inputSuccess" placeholder="Ej: JAVE01" [(ngModel)]="nombreRuta" name="nombreRuta">
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="form-control-label" for="inputWarning">Lugar de inicio</label>
+                                    <input type="text" class="form-control form-control-warning" id="inputWarning" placeholder="Ej: Javeriana" [(ngModel)]="origenRuta" name="origenRuta">
+                                </div>
+
+                                <div class="form-group has-danger">
+                                    <label class="form-control-label" for="inputError">Lugar de destino</label>
+                                    <input type="text" class="form-control form-control-danger" id="inputError" placeholder="Ej: Suba" [(ngModel)]="destinoRuta" name="destinoRuta">
+                                </div>
+
+                                <div class="form-group has-danger">
+                                    <label class="form-control-label" for="inputError">Términos de búsqueda</label>
+                                    <input type="text" class="form-control form-control-danger" id="inputError" placeholder="Ej: Suba,Chapinero,Carulla" [(ngModel)]="terminosRuta" name="terminosRuta">
+                                </div>
+
+                            </form>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col col-xl-6 col-lg-12">
+                            <h4>Inicio de la ruta</h4>
+                            <form role="form">
+                                <div class="form-group has-success">
+                                    <label class="form-control-label" for="inputSuccess">Latitud</label>
+                                    <input type="text" class="form-control form-control-success" id="inputSuccess" placeholder="Ej: 54.5345345" [(ngModel)]="latitudInicio" name="latitudInicio">
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="form-control-label" for="inputWarning">Longitud</label>
+                                    <input type="text" class="form-control form-control-warning" id="inputWarning" placeholder="Ej: -74.2342443" [(ngModel)]="longitudInicio" name="longitudInicio">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col col-xl-6 col-lg-12">
+                            <h4>Fin de la ruta</h4>
+                            <form role="form">
+                                <div class="form-group has-success">
+                                        <label class="form-control-label" for="inputSuccess">Latitud</label>
+                                        <input type="text" class="form-control form-control-success" id="inputSuccess" placeholder="Ej: 54.5345345" [(ngModel)]="latitudFin" name="latitudFin">
+                                    </div>
+
+                                    <div class="form-group has-warning">
+                                        <label class="form-control-label" for="inputWarning">Longitud</label>
+                                        <input type="text" class="form-control form-control-warning" id="inputWarning" placeholder="Ej: -74.2342443" [(ngModel)]="longitudFin" name="longitudFin">
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-xl-12 col-lg-12">
+                            <div id="contPuntos" *ngIf="rutaCreada">
+                                <h4>Puntos de la ruta</h4>
+                                <form role="form">
+
+                                    <div class="form-group has-success">
+                                        <label class="form-control-label" for="inputSuccess">Latitud</label>
+                                        <input type="text" class="form-control form-control-success" id="inputSuccess" placeholder="Ej: 54.5345345" [(ngModel)]="latitud" name="latitud">
+                                    </div>
+
+                                    <div class="form-group has-warning">
+                                        <label class="form-control-label" for="inputWarning">Longitud</label>
+                                        <input type="text" class="form-control form-control-warning" id="inputWarning" placeholder="Ej: -74.2342443" [(ngModel)]="longitud" name="longitud">
+                                    </div>
+
+                                    
+                                    <button class="btn btn-success pull-right" (click)="agregarPunto()">Agregar punto</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Ver ruta'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Ver ruta ({{idRuta}})
+                    <button class="btn btn-success pull-right" (click)="guardar()">Guardar ruta</button>
+                </div>
+                <div class="card-body table-responsive">
+                    <div class="row">
+                        <div class="col col-xl-6 col-lg-12">
+                            <h4>Información de la ruta</h4>
+                            <form role="form">
+
+                                
+
+                            </form>
+                            
+                        </div>
+                        <div class="col col-xl-6 col-lg-12">
+                            <h4>Previsualización de la ruta</h4>
+                        	<div #gmap style="width:100%;height:400px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-xl-6 col-lg-12">
+                            <h4>Inicio de la ruta</h4>
+                            <form role="form">
+                                
+                            </form>
+                        </div>
+                        <div class="col col-xl-6 col-lg-12">
+                            <h4>Fin de la ruta</h4>
+                            <form role="form">
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-xl-12 col-lg-12">
+                            <div id="contPuntos" *ngIf="rutaCreada">
+                                <h4>Puntos de la ruta</h4>
+                                <form role="form">
+
+                                    
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

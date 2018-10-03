@@ -1,0 +1,37 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Rutas'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Listado de rutas
+                    <button class="btn btn-success pull-right" [routerLink]="['/crearruta']">Crear ruta</button>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ruta</th>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let ruta of rutas">
+                            <th scope="row">1</th>
+                            <td>{{ruta.nombreruta}}</td>
+                            <td>{{ruta.origen}}</td>
+                            <td>{{ruta.destino}}</td>
+                            <td><button class="btn" [routerLink]="['/verruta/'+ruta.idruta]">Ver ruta</button></td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
