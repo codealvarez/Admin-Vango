@@ -3592,7 +3592,7 @@ var CrearrutaRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [@routerTransition]>\n    <app-page-header [heading]=\"'Crear ruta'\" [icon]=\"'fa-map-signs'\"></app-page-header>\n    <div class=\"row\">\n        <div class=\"col col-xl-12 col-lg-12\">\n            <div class=\"card mb-3\">\n                <div class=\"card-header\">\n                    Crear ruta\n                    <button class=\"btn btn-success pull-right\" (click)=\"guardar()\">Guardar ruta</button>\n                </div>\n                <div class=\"card-body table-responsive\">\n                    <div class=\"row\">\n                        <div class=\"col col-xl-6 col-lg-12\">\n                            <h4>Información de la ruta</h4>\n                            <form role=\"form\">\n\n                                <div class=\"form-group has-success\">\n                                    <label class=\"form-control-label\" for=\"inputSuccess\">Nombre de la ruta</label>\n                                    <input type=\"text\" class=\"form-control form-control-success\" id=\"inputSuccess\" placeholder=\"Ej: JAVE01\" [(ngModel)]=\"nombreRuta\" name=\"nombreRuta\">\n                                </div>\n\n                                <div class=\"form-group has-warning\">\n                                    <label class=\"form-control-label\" for=\"inputWarning\">Lugar de inicio</label>\n                                    <input type=\"text\" class=\"form-control form-control-warning\" id=\"inputWarning\" placeholder=\"Ej: Javeriana\" [(ngModel)]=\"origenRuta\" name=\"origenRuta\">\n                                </div>\n\n                                <div class=\"form-group has-danger\">\n                                    <label class=\"form-control-label\" for=\"inputError\">Lugar de destino</label>\n                                    <input type=\"text\" class=\"form-control form-control-danger\" id=\"inputError\" placeholder=\"Ej: Suba\" [(ngModel)]=\"destinoRuta\" name=\"destinoRuta\">\n                                </div>\n\n                                <div class=\"form-group has-danger\">\n                                    <label class=\"form-control-label\" for=\"inputError\">Términos de búsqueda</label>\n                                    <input type=\"text\" class=\"form-control form-control-danger\" id=\"inputError\" placeholder=\"Ej: Suba,Chapinero,Carulla\" [(ngModel)]=\"terminosRuta\" name=\"terminosRuta\">\n                                </div>\n\n                            </form>\n\n                            <!-- <h4>Puntos de la ruta</h4>\n                            <form role=\"form\">\n\n                                <div class=\"form-group has-success\">\n                                    <label class=\"form-control-label\" for=\"inputSuccess\">Latitud</label>\n                                    <input type=\"text\" class=\"form-control form-control-success\" id=\"inputSuccess\" placeholder=\"Ej: 54.5345345\">\n                                </div>\n\n                                <div class=\"form-group has-warning\">\n                                    <label class=\"form-control-label\" for=\"inputWarning\">Longitud</label>\n                                    <input type=\"text\" class=\"form-control form-control-warning\" id=\"inputWarning\" placeholder=\"Ej: -74.2342443\">\n                                </div>\n\n                                <div class=\"form-group has-danger\">\n                                    <label class=\"form-control-label\" for=\"inputError\">Tipo</label>\n                                    <select class=\"form-control\">\n                                        <option>Inicio</option>\n                                        <option>Fin</option>\n                                        <option>Waypoint</option>\n                                    </select>\n                                </div>\n                                <button class=\"btn btn-success pull-right\" (click)=\"agregarPunto()\">Agregar punto</button>\n\n                            </form> -->\n                        </div>\n                        <div class=\"col col-xl-6 col-lg-12\">\n                            <h4>Previsualización de la ruta</h4>\n                            <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n                              <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n                            </agm-map>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div [@routerTransition]>\n    <app-page-header [heading]=\"'Crear ruta'\" [icon]=\"'fa-map-signs'\"></app-page-header>\n    <div class=\"row\">\n        <div class=\"col col-xl-12 col-lg-12\">\n            <div class=\"card mb-3\">\n                <div class=\"card-header\">\n                    Crear ruta\n                    <button class=\"btn btn-success pull-right\" (click)=\"guardar()\">Guardar ruta</button>\n                </div>\n                <div class=\"card-body table-responsive\">\n                    <div class=\"row\">\n                        <div class=\"col col-xl-12 col-lg-12\">\n                            <h4>Información de la ruta</h4>\n                            <form role=\"form\">\n\n                                <div class=\"form-group has-success\">\n                                    <label class=\"form-control-label\" for=\"inputSuccess\">Nombre de la ruta</label>\n                                    <input type=\"text\" class=\"form-control form-control-success\" id=\"inputSuccess\" placeholder=\"Ej: JAVE01\" [(ngModel)]=\"nombreRuta\" name=\"nombreRuta\">\n                                </div>\n\n                                <div class=\"form-group has-warning\">\n                                    <label class=\"form-control-label\" for=\"inputWarning\">Lugar de inicio</label>\n                                    <input type=\"text\" class=\"form-control form-control-warning\" id=\"inputWarning\" placeholder=\"Ej: Javeriana\" [(ngModel)]=\"origenRuta\" name=\"origenRuta\">\n                                </div>\n\n                                <div class=\"form-group has-danger\">\n                                    <label class=\"form-control-label\" for=\"inputError\">Lugar de destino</label>\n                                    <input type=\"text\" class=\"form-control form-control-danger\" id=\"inputError\" placeholder=\"Ej: Suba\" [(ngModel)]=\"destinoRuta\" name=\"destinoRuta\">\n                                </div>\n\n                                <div class=\"form-group has-danger\">\n                                    <label class=\"form-control-label\" for=\"inputError\">Términos de búsqueda</label>\n                                    <input type=\"text\" class=\"form-control form-control-danger\" id=\"inputError\" placeholder=\"Ej: Suba,Chapinero,Carulla\" [(ngModel)]=\"terminosRuta\" name=\"terminosRuta\">\n                                </div>\n\n                            </form>\n                            \n                        </div>\n                        \n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col col-xl-6 col-lg-12\">\n                            <h4>Inicio de la ruta</h4>\n                            <form role=\"form\">\n                                <div class=\"form-group has-success\">\n                                    <label class=\"form-control-label\" for=\"inputSuccess\">Latitud</label>\n                                    <input type=\"text\" class=\"form-control form-control-success\" id=\"inputSuccess\" placeholder=\"Ej: 54.5345345\" [(ngModel)]=\"latitudInicio\" name=\"latitudInicio\">\n                                </div>\n\n                                <div class=\"form-group has-warning\">\n                                    <label class=\"form-control-label\" for=\"inputWarning\">Longitud</label>\n                                    <input type=\"text\" class=\"form-control form-control-warning\" id=\"inputWarning\" placeholder=\"Ej: -74.2342443\" [(ngModel)]=\"longitudInicio\" name=\"longitudInicio\">\n                                </div>\n                            </form>\n                        </div>\n                        <div class=\"col col-xl-6 col-lg-12\">\n                            <h4>Fin de la ruta</h4>\n                            <form role=\"form\">\n                                <div class=\"form-group has-success\">\n                                        <label class=\"form-control-label\" for=\"inputSuccess\">Latitud</label>\n                                        <input type=\"text\" class=\"form-control form-control-success\" id=\"inputSuccess\" placeholder=\"Ej: 54.5345345\" [(ngModel)]=\"latitudFin\" name=\"latitudFin\">\n                                    </div>\n\n                                    <div class=\"form-group has-warning\">\n                                        <label class=\"form-control-label\" for=\"inputWarning\">Longitud</label>\n                                        <input type=\"text\" class=\"form-control form-control-warning\" id=\"inputWarning\" placeholder=\"Ej: -74.2342443\" [(ngModel)]=\"longitudFin\" name=\"longitudFin\">\n                                    </div>\n                            </form>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col col-xl-12 col-lg-12\">\n                            <div id=\"contPuntos\" *ngIf=\"rutaCreada\">\n                                <h4>Puntos de la ruta</h4>\n                                <form role=\"form\">\n\n                                    <div class=\"form-group has-success\">\n                                        <label class=\"form-control-label\" for=\"inputSuccess\">Latitud</label>\n                                        <input type=\"text\" class=\"form-control form-control-success\" id=\"inputSuccess\" placeholder=\"Ej: 54.5345345\" [(ngModel)]=\"latitud\" name=\"latitud\">\n                                    </div>\n\n                                    <div class=\"form-group has-warning\">\n                                        <label class=\"form-control-label\" for=\"inputWarning\">Longitud</label>\n                                        <input type=\"text\" class=\"form-control form-control-warning\" id=\"inputWarning\" placeholder=\"Ej: -74.2342443\" [(ngModel)]=\"longitud\" name=\"longitud\">\n                                    </div>\n\n                                    \n                                    <button class=\"btn btn-success pull-right\" (click)=\"agregarPunto()\">Agregar punto</button>\n\n                                </form>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3619,7 +3619,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CrearrutaComponent", function() { return CrearrutaComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _router_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../router.animations */ "./src/app/router.animations.ts");
-/* harmony import */ var _ws_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ws.service */ "./src/app/ws.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ws_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ws.service */ "./src/app/ws.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3632,24 +3633,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var CrearrutaComponent = /** @class */ (function () {
-    function CrearrutaComponent(myService) {
+    function CrearrutaComponent(myService, router) {
         this.myService = myService;
+        this.router = router;
         this.lat = 51.678418;
         this.lng = 7.809007;
+        this.rutaCreada = false;
     }
     CrearrutaComponent.prototype.ngOnInit = function () {
     };
     CrearrutaComponent.prototype.guardar = function () {
         var model = this;
         if (model.nombreRuta && model.origenRuta && model.destinoRuta && model.terminosRuta) {
-            this.myService.crearRuta(model.nombreRuta, model.origenRuta, model.destinoRuta, model.terminosRuta)
+            this.myService.crearRuta(model.nombreRuta, model.origenRuta, model.destinoRuta, model.terminosRuta, model.latitudInicio, model.longitudInicio, model.latitudInicio, model.longitudFin)
                 .subscribe(function (result) {
                 console.log(result);
                 if (result.resultado == "OK") {
                     console.log('Login OK');
                     localStorage.setItem('rutaActual', result.idruta);
                     alert('Ruta guardada. Idruta ' + result.idruta);
+                    //model.rutaCreada=true;
+                    //model.idRuta=result.idruta;
+                    model.router.navigate(['verruta/' + result.idruta]);
                 }
                 else {
                     alert('Error: ' + result.nombre);
@@ -3664,7 +3671,22 @@ var CrearrutaComponent = /** @class */ (function () {
         }
     };
     CrearrutaComponent.prototype.agregarPunto = function () {
-        alert('Punto agregado');
+        var model = this;
+        this.myService.agregarPuntoRuta(model.idRuta, 'N/A', 'N/A', 'REFERENCIA', model.latitud, model.longitud)
+            .subscribe(function (result) {
+            console.log(result);
+            if (result.resultado == "OK") {
+                console.log('Login OK');
+                localStorage.setItem('rutaActual', result.idruta);
+                alert('Punto Agregado.');
+            }
+            else {
+                alert('Error: ' + result.nombre);
+            }
+            //this.onGetDataSuccess(result);
+        }, function (error) {
+            //this.onGetDataError(error);
+        });
     };
     CrearrutaComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -3673,7 +3695,7 @@ var CrearrutaComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./crearruta.component.scss */ "./src/app/layout/crearruta/crearruta.component.scss")],
             animations: [Object(_router_animations__WEBPACK_IMPORTED_MODULE_1__["routerTransition"])()]
         }),
-        __metadata("design:paramtypes", [_ws_service__WEBPACK_IMPORTED_MODULE_2__["WebService"]])
+        __metadata("design:paramtypes", [_ws_service__WEBPACK_IMPORTED_MODULE_3__["WebService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], CrearrutaComponent);
     return CrearrutaComponent;
 }());

@@ -18,7 +18,7 @@ var map = {
 	],
 	"./bs-component/bs-component.module": [
 		"./src/app/layout/bs-component/bs-component.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~47795a27",
+		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
 		"bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module",
 		"common",
 		"bs-component-bs-component-module"
@@ -33,15 +33,20 @@ var map = {
 		"common",
 		"charts-charts-module"
 	],
+	"./conductores/conductores.module": [
+		"./src/app/layout/conductores/conductores.module.ts",
+		"common",
+		"conductores-conductores-module"
+	],
 	"./crearruta/crearruta.module": [
 		"./src/app/layout/crearruta/crearruta.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~47795a27",
+		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
 		"common",
 		"crearruta-crearruta-module"
 	],
 	"./dashboard/dashboard.module": [
 		"./src/app/layout/dashboard/dashboard.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~47795a27",
+		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
 		"bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module",
 		"common",
 		"dashboard-dashboard-module"
@@ -58,14 +63,14 @@ var map = {
 	],
 	"./layout/layout.module": [
 		"./src/app/layout/layout.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~47795a27",
+		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
 		"bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module",
 		"common",
 		"layout-layout-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~47795a27",
+		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
 		"common",
 		"login-login-module"
 	],
@@ -91,6 +96,17 @@ var map = {
 		"./src/app/layout/tables/tables.module.ts",
 		"common",
 		"tables-tables-module"
+	],
+	"./verruta/verruta.module": [
+		"./src/app/layout/verruta/verruta.module.ts",
+		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
+		"common",
+		"verruta-verruta-module"
+	],
+	"./viajes/viajes.module": [
+		"./src/app/layout/viajes/viajes.module.ts",
+		"common",
+		"viajes-viajes-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -169,7 +185,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -422,7 +438,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-xl-12\">\r\n        <h2 class=\"page-header\">\r\n            {{heading}}\r\n        </h2>\r\n        <ol class=\"breadcrumb\">\r\n            <li class=\"breadcrumb-item\">\r\n                <i class=\"fa fa-dashboard\"></i> <a href=\"Javascript:void(0)\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n            </li>\r\n            <li class=\"breadcrumb-item active\"><i class=\"fa {{icon}}\"></i> {{heading}}</li>\r\n        </ol>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-12\">\n        <h2 class=\"page-header\">\n            {{heading}}\n        </h2>\n        <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\">\n                <i class=\"fa fa-dashboard\"></i> <a href=\"Javascript:void(0)\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n            </li>\n            <li class=\"breadcrumb-item active\"><i class=\"fa {{icon}}\"></i> {{heading}}</li>\n        </ol>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -533,7 +549,7 @@ var PageHeaderModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card text-white bg-{{bgClass}}\">\r\n    <div class=\"card-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col col-xs-3\">\r\n                <i class=\"fa {{icon}} fa-5x\"></i>\r\n            </div>\r\n            <div class=\"col col-xs-9 text-right\">\r\n                <div class=\"d-block huge\">{{count}}</div>\r\n                <div class=\"d-block\">{{label}}</div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card-footer\">\r\n        <span class=\"float-left\">View Details {{data}}</span>\r\n        <a href=\"javascript:void(0)\" class=\"float-right card-inverse\">\r\n            <span ><i class=\"fa fa-arrow-circle-right\"></i></span>\r\n        </a>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"card text-white bg-{{bgClass}}\">\n    <div class=\"card-header\">\n        <div class=\"row\">\n            <div class=\"col col-xs-3\">\n                <i class=\"fa {{icon}} fa-5x\"></i>\n            </div>\n            <div class=\"col col-xs-9 text-right\">\n                <div class=\"d-block huge\">{{count}}</div>\n                <div class=\"d-block\">{{label}}</div>\n            </div>\n        </div>\n    </div>\n    <div class=\"card-footer\">\n        <span class=\"float-left\">View Details {{data}}</span>\n        <a href=\"javascript:void(0)\" class=\"float-right card-inverse\">\n            <span ><i class=\"fa fa-arrow-circle-right\"></i></span>\n        </a>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -757,56 +773,34 @@ var WebService = /** @class */ (function () {
         return this.http.get(serverUrl, { params: { codigousu: user, claveusu: password } })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.crearRuta = function (nombre, origen, destino, terminos) {
+    WebService.prototype.crearRuta = function (nombre, origen, destino, terminos, latI, lonI, latF, lonF) {
         var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/agregar_ruta.aspx";
         console.log('Recibidos - nombre:' + nombre + ' - Origen: ' + origen + ' - Destino: ' + destino + ' - Terminos: ' + terminos);
         var headers = this.createRequestHeader();
         /*return this.http.get(serverUrl)
             .map(res => res); */
-        return this.http.get(serverUrl, { params: { nombreruta: nombre, terminos: terminos, origen: origen, destino: destino } })
+        return this.http.get(serverUrl, { params: { nombreruta: nombre, terminos: terminos, origen: origen, destino: destino, latorigen: latI, lonorigen: lonI, latdestino: latF, londestino: lonF } })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.registrar = function (name, email, cedula, grupo) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/registrar_usuario_pasajero.aspx";
-        console.log('URL registro: ' + serverUrl);
+    WebService.prototype.agregarPuntoRuta = function (idRuta, nombre, direccion, tipo, latitud, longitud) {
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/agregar_parada_ruta.aspx";
+        console.log('Recibidos - idRuta:' + idRuta + ' - nombre: ' + nombre + ' - direccion: ' + direccion + ' - tipo: ' + tipo + ' - latitud: ' + latitud + ' - ' + longitud);
         var headers = this.createRequestHeader();
         /*return this.http.get(serverUrl)
             .map(res => res); */
-        if (!grupo) {
-            grupo = cedula;
-        }
-        console.log('Name: ' + name + ' - email: ' + email + ' - Cedula: ' + cedula + ' - Grupo: ' + grupo);
-        return this.http.get(serverUrl, { params: { cedula: cedula, grupo: grupo, email: email, nombre: name }, headers: headers })
+        return this.http.get(serverUrl, { params: { idruta: idRuta, nombre: nombre, direccion: direccion, tipo: tipo, orden: '0', latitud: latitud, longitud: longitud } })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.enviarMensaje = function (asunto, mensaje, idUsuario) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/registrar_mensaje_pasajero.aspx";
-        console.log('URL registro: ' + serverUrl);
+    WebService.prototype.getPuntosRuta = function (idRuta) {
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/traer_paraderos_ruta.aspx";
         var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)
-            .map(res => res); */
-        return this.http.get(serverUrl, { params: { idpasajero: idUsuario, asunto: asunto, texto: mensaje }, headers: headers })
+        return this.http.get(serverUrl, { params: { idruta: idRuta }, headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.actualizarDatos = function (nombre, email, idUsuario) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/actualizar_datos_pasajero.aspx";
-        console.log('URL registro: ' + serverUrl);
+    WebService.prototype.getDetallesRuta = function (idRuta) {
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_rutas_todas.aspx";
         var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)
-            .map(res => res); */
-        return this.http.get(serverUrl, { params: { idpasajero: idUsuario, nombre: nombre, mail: email }, headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.getRutasAsignadas = function (idUsuario) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_reservas_pasajero.aspx";
-        var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { idpasajero: idUsuario }, headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.getMensajes = function () {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/traer_mensajes_predeterminados.aspx";
-        var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { origen: 'pasajero', destino: 'conductor' }, headers: headers })
+        return this.http.get(serverUrl, { params: { idruta: idRuta }, headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
     WebService.prototype.getRutasDisponibles = function (idUsuario) {
@@ -816,179 +810,53 @@ var WebService = /** @class */ (function () {
         return this.http.get(serverUrl, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.getViajesDisponibles = function (idRuta) {
+    WebService.prototype.agregarParadaRuta = function (idRuta, nombre, direccion, latitud, longitud) {
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/agregar_parada_ruta.aspx";
+        var headers = this.createRequestHeader();
+        return this.http.get(serverUrl, { params: {
+                idruta: idRuta,
+                nombre: nombre,
+                direccion: direccion,
+                latitud: latitud,
+                longitud: longitud,
+                tipo: 'NORMAL'
+            }, headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
+    };
+    WebService.prototype.deleteParadaRuta = function (idRuta, idParada) {
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/eliminar_parada_ruta.aspx";
+        var headers = this.createRequestHeader();
+        return this.http.get(serverUrl, { params: { idruta: idRuta, idparada: idParada }, headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
+    };
+    WebService.prototype.getViajesRuta = function (idRuta) {
         //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
         var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_viajes_rutas.aspx";
         var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { idruta: idRuta }, headers: headers })
+        return this.http.get(serverUrl, { params: { idruta: idRuta, estado: 'TODOS' }, headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.getTokensConductor = function (idConductor) {
+    WebService.prototype.getViajesTodos = function () {
         //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/traer_tokens_push.aspx";
-        var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { idpasajero: '0', idconductor: idConductor }, headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.enviarPush = function (tokens, mensaje) {
-        console.log('Tokens recibidos');
-        console.log(tokens);
-        var serverUrl = "http://apps.emeraldstudio.co/imperial/servicios.php?mensaje=" + mensaje;
-        for (var i = 0; i < tokens.length; i++) {
-            serverUrl = serverUrl + ('&tokens[]=' + tokens[i]);
-        }
-        console.log('URL a enviar');
-        console.log(serverUrl);
-        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_viajes_rutas.aspx";
         var headers = this.createRequestHeader();
         return this.http.get(serverUrl, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.getPuntosRuta = function (idRuta) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/traer_paraderos_ruta.aspx";
+    WebService.prototype.getConductores = function () {
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_conductores_placa.aspx";
         var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { idruta: idRuta }, headers: headers })
+        return this.http.get(serverUrl, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.setReserva = function (idPasajero, idViaje, latitud, longitud, direccion, cantidad) {
-        //idPasajero,idViaje,latitud,longitud,direccion,cantidad
-        console.log('Datos recibidos: ');
-        console.log('idPasajero: ' + idPasajero + ' - idViaje: ' + idViaje + ' - cantidad: ' + cantidad + ' - direccion: ' + direccion);
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/registrar_reserva.aspx";
-        var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { idpasajero: idPasajero, idviaje: idViaje, cantidad: cantidad, direccion: direccion, latitud: latitud, longitud: longitud }, headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.getUbicacionVehiculo = function (placa) {
-        console.log('Obteniendo ubicación del vehículo: ' + placa);
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/datos_gps_placa.aspx";
+    WebService.prototype.getConductoresPlaca = function (placa) {
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_conductores_placa.aspx";
         var headers = this.createRequestHeader();
         return this.http.get(serverUrl, { params: { placa: placa }, headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
-    WebService.prototype.getIdMember = function (user, password) {
-        var serverUrl = "https://secure.modipay.co/modicard/webresources/service/crearUsuario";
-        console.log('Recibidos - User:' + user + ' - Pass: ' + password);
-        var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)
-            .map(res => res); */
-        return this.http.post(serverUrl, JSON.stringify({
-            userE: 'c@rpooling+', passE: 'F3OZ3H@q*U', name: user, passwname: password
-        }), {
-            headers: headers
-        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.asignarIdMember = function (user, idMember) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/registrar_idmodipay.aspx";
-        //?idusuario=4&idmodipay=0
-        console.log('Recibidos - User:' + user + ' - idMember: ' + idMember);
-        var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)
-            .map(res => res); */
-        return this.http.get(serverUrl, { params: { idusuario: user, idmodipay: idMember }, headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.registrarToken = function (token, idUsuario) {
-        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/registrar_token_push.aspx";
-        //?idusuario=4&idmodipay=0
-        console.log('Recibidos - Token:' + token + ' idUsuario: ' + idUsuario);
-        var plataforma;
-        /*if (platform.isIOS) {
-          plataforma = 'iOS';
-        }else{
-          plataforma = 'Android';
-        }*/
-        var headers = this.createRequestHeader();
-        return this.http.get(serverUrl, { params: { idpasajero: idUsuario, idconductor: '0', sistema: plataforma, Token: token }, headers: headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.getTarjetas = function (idmember, password) {
-        var serverUrl = "https://secure.modipay.co/modicard/webresources/service/listarTarjetas";
-        console.log('Recibidos - User:' + idmember + ' - Pass: ' + password);
-        var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)
-            .map(res => res); */
-        return this.http.post(serverUrl, { userE: "c@rpooling+", passE: "F3OZ3H@q*U", idmember: idmember, memberpassw: password }, {
-            headers: headers
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.agregarTarjeta = function (idmember, memberpassw, numero_tarjeta, vencimiento, franquicia, codigo_seguridad) {
-        var serverUrl = "https://secure.modipay.co/modicard/webresources/service/agregarTarjeta";
-        var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)
-            .map(res => res); */
-        return this.http.post(serverUrl, {
-            userE: "c@rpooling+",
-            passE: "F3OZ3H@q*U",
-            idmember: idmember,
-            memberpassw: memberpassw,
-            direccion: 'tokendir1234',
-            numero_tarjeta: numero_tarjeta,
-            vencimiento: vencimiento,
-            franquicia: franquicia,
-            codigo_seguridad: codigo_seguridad
-        }, {
-            headers: headers
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.eliminarTarjeta = function (idmember, memberpassw, idtarjeta) {
-        var serverUrl = "https://secure.modipay.co/modicard/webresources/service/eliminarTarjeta";
-        var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)*/
-        return this.http.post(serverUrl, {
-            userE: "c@rpooling+",
-            passE: "F3OZ3H@q*U",
-            idmember: idmember,
-            memberpassw: memberpassw,
-            idcard: idtarjeta
-        }, {
-            headers: headers
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    WebService.prototype.pagar = function (idmember, memberpassw, idtarjeta, valor) {
-        var serverUrl = "https://secure.modipay.co/modicard/webresources/service/pagoToken";
-        var headers = this.createRequestHeader();
-        /*return this.http.get(serverUrl)*/
-        return this.http.post(serverUrl, {
-            userE: "c@rpooling+",
-            passE: "F3OZ3H@q*U",
-            idmember: idmember,
-            memberpassw: memberpassw,
-            idTarjeta: idtarjeta,
-            cuotas: "1",
-            valor: valor,
-            subtotal: "0",
-            impuestos: "0",
-            costosdeenvio: "0",
-            propina: "0",
-            direccionIp: "192.168.34.21",
-            pagador: "Carlos Cortesr",
-            descripcion: "Descripción de la venta",
-            referencia: "Pago de reserva - SeComparte",
-            telefonodeenvio: "5640323",
-            nombrecomprador: "Comprador",
-            direccionenvio: "Av Calle 9",
-            paisdeenvio: "Colombia ",
-            codigopostaldeenvio: "169111",
-            referencia1: "referencia 1 Aplicacion",
-            referencia2: "referencia 2 Aplicacion",
-            referencia3: "referencia 3 Aplicacion",
-            tipodeidentificacion: "Cedula Ciudadania",
-            nodeIdentificacion: "111111111",
-            correoNotificacion: "daniel07079@gmail.com"
-        }, {
-            headers: headers
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
-    };
-    /*getResponseInfo() {
-        let headers = this.createRequestHeader();
-        return this.http.get(this.serverUrl, { headers: headers })
-            .do(res =>  res);
-    }*/
     WebService.prototype.createRequestHeader = function () {
         // set headers here e.g.
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({});
@@ -1060,7 +928,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Angular\SB-Admin-BS4-Angular-5\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/macbookpro/Documents/GitHub/Admin-Vango/src/main.ts */"./src/main.ts");
 
 
 /***/ })

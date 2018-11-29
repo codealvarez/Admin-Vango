@@ -1,18 +1,18 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
     <div class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <!-- <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Inicio' | translate }}</span>
-        </a>
+        </a> -->
         <a [routerLink]="['/rutas']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-map-signs"></i>&nbsp;
             <span>{{ 'Rutas' | translate }}</span>
         </a>
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/viajes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-table"></i>&nbsp;
             <span>{{ 'Viajes' | translate }}</span>
         </a>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/conductores']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Conductores' | translate }}</span>
         </a>

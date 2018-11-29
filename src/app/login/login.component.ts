@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
             		console.log('Login OK');
                     localStorage.setItem('nombre',result.nombre);
             		localStorage.setItem('isLoggedin', 'true');
+                    this.router.navigate(['/rutas']);
             	}else{
             		alert('Error: '+result.nombre);
             	}

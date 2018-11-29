@@ -1,0 +1,48 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Viajes'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Listado de viajes
+                    <!-- <button class="btn btn-success pull-right" [routerLink]="['/crearruta']">Crear ruta</button> -->
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ruta</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Capacidad</th>
+                            <th>Disponibles</th>
+                            <th>Conductor</th>
+                            <th>Placa</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let viaje of viajes">
+                            <th scope="row">{{viaje.idviaje}}</th>
+                            <td><button [routerLink]="['/verruta/'+viaje.idruta]" class="btn btn-info btn-sm">{{viaje.nombreruta}}</button></td>
+                            <td>{{viaje.fecha_viaje}}</td>
+                            <td>{{viaje.hora_viaje}}</td>
+                            <td>{{viaje.capacidad}}</td>
+                            <td>{{viaje.disponibles}}</td>
+                            <td>{{viaje.conductor}}</td>
+                            <td>{{viaje.placa}}</td>
+                            <td>{{viaje.precio}}</td>
+                            <td>{{viaje.estadoviaje}}</td>
+
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

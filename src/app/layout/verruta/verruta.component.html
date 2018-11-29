@@ -4,47 +4,91 @@
         <div class="col col-xl-12 col-lg-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    Ver ruta ({{idRuta}})
-                    <button class="btn btn-success pull-right" (click)="guardar()">Guardar ruta</button>
+                    Ver ruta ({{idRuta}}) - {{nombre}}
+                    <!-- <button class="btn btn-success pull-right" (click)="guardar()">Guardar ruta</button> -->
+                    <button class="btn btn-success pull-right" [routerLink]="['/viajes/'+idRuta]">Ver viajes</button>
                 </div>
                 <div class="card-body table-responsive">
                     <div class="row">
                         <div class="col col-xl-6 col-lg-12">
-                            <h4>Información de la ruta</h4>
-                            <form role="form">
+                            <div class="alert alert-secondary" role="alert">
+                              Información de la ruta
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Origen: <strong>{{origen}}</strong></li>
+                                <li class="list-group-item">Destino: <strong>{{destino}}</strong></li>
+                                <li class="list-group-item">Términos de búsqueda: <strong>{{terminos}}</strong></li>
+                            </ul>
 
-                                
+                            <div class="alert alert-secondary" role="alert">
+                              Inicio de la ruta
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Lugar: <strong>{{origen}}</strong></li>
+                                <li class="list-group-item">Latitud: <strong>{{latInicial}}</strong></li>
+                                <li class="list-group-item">Longitud: <strong>{{lonInicial}}</strong></li>
+                            </ul>
 
-                            </form>
-                            
+                            <div class="alert alert-secondary" role="alert">
+                              Fin de la ruta
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Lugar: <strong>{{destino}}</strong></li>
+                                <li class="list-group-item">Latitud: <strong>{{latFinal}}</strong></li>
+                                <li class="list-group-item">Longitud: <strong>{{lonFinal}}</strong></li>
+                            </ul>
                         </div>
                         <div class="col col-xl-6 col-lg-12">
-                            <h4>Previsualización de la ruta</h4>
+                            <div class="alert alert-secondary" role="alert">
+                              Previsualización de la ruta
+                            </div>
                         	<div #gmap style="width:100%;height:400px"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col col-xl-6 col-lg-12">
-                            <h4>Inicio de la ruta</h4>
-                            <form role="form">
-                                
-                            </form>
-                        </div>
-                        <div class="col col-xl-6 col-lg-12">
-                            <h4>Fin de la ruta</h4>
-                            <form role="form">
-                                
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col col-xl-12 col-lg-12">
-                            <div id="contPuntos" *ngIf="rutaCreada">
-                                <h4>Puntos de la ruta</h4>
+                            <div id="contPuntos">
+                                <div class="alert alert-secondary" role="alert">
+                                  Puntos de la ruta
+                                </div>
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Dirección</th>
+                                      <th scope="col">Latitud</th>
+                                      <th scope="col">Longitud</th>
+                                      <th scope="col">Acciones</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let item of paradas">
+                                      <th scope="row">{{item.idparada}}</th>
+                                      <td>{{item.nombre}}</td>
+                                      <td>{{item.direccion}}</td>
+                                      <td>{{item.latitud}}</td>
+                                      <td>{{item.longitud}}</td>
+                                      <td><button (click)="borrarParada(item.idparada)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
                                 <form role="form">
-
-                                    
-
+                                  <div class="form-row">
+                                    <div class="col">
+                                      <input [(ngModel)]="nombrePunto" id="nombrePunto" name="nombrePunto" type="text" class="form-control" placeholder="Nombre" required>
+                                    </div>
+                                    <div class="col">
+                                      <input [(ngModel)]="direccionPunto" id="direccionPunto" name="direccionPunto" type="text" class="form-control" placeholder="Dirección" required>
+                                    </div>
+                                    <div class="col">
+                                      <input [(ngModel)]="latitudPunto" id="latitudPunto" name="latitudPunto" type="text" class="form-control" placeholder="Latitud" required>
+                                    </div>
+                                    <div class="col">
+                                      <input [(ngModel)]="longitudPunto" id="longitudPunto" name="longitudPunto" type="text" class="form-control" placeholder="Longitud" required>
+                                    </div>
+                                  </div>
+                                  <button (click)="agregarParada()" class="btn btn-primary pull-right mt-1">Agregar parada</button>
                                 </form>
                             </div>
                         </div>

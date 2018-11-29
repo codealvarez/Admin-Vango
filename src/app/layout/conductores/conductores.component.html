@@ -1,0 +1,38 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Conductores'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Listado de conductores
+                    <!-- <button class="btn btn-success pull-right" [routerLink]="['/crearruta']">Crear ruta</button> -->
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Cédula</th>
+                            <th>Celular</th>
+                            <th>Placa</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let conductor of conductores">
+                            <th scope="row">{{conductor.idconductor}}</th>
+                            <td>{{conductor.nombre}}</td>
+                            <td>{{conductor.cedula}}</td>
+                            <td>{{conductor.celular}}</td>
+                            <td><button [routerLink]="['/conductores/'+conductor.placa]" class="btn btn-info btn-sm">{{conductor.placa}}</button></td>
+
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
