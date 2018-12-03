@@ -1,0 +1,42 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Ver pasajero'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Ver pasajero ({{idPasajero}})
+                </div>
+                <div class="card-body table-responsive">
+                    <div class="row">
+                        <div class="col col-xl-6 col-lg-12">
+                            <div class="alert alert-secondary" role="alert">
+                              Información del pasajero
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Nombres: <strong>{{nombre}}</strong></li>
+                                <li class="list-group-item">Cédula: <strong>{{cedula}}</strong></li>
+                                <li class="list-group-item">Clave de acceso: <strong>{{clave}}</strong></li>
+                                
+                                <li class="list-group-item">Mail: <strong>{{mail}}</strong></li>
+
+                                <li class="list-group-item">Estado: <strong>{{estado}}</strong></li>
+                            </ul>
+
+                            
+                        </div>
+                        <div class="col col-xl-6 col-lg-12">
+                            <div class="alert alert-secondary" role="alert">
+                              Información de vinculación
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Grupo: <strong>{{grupo}}</strong></li>
+                                <li class="list-group-item">Id Modipay: <strong>{{idmodipay}}</strong></li>
+                                <li class="list-group-item">Id Vango: <strong>{{idvango}}</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

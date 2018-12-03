@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["dashboard-dashboard-module~layout-layout-module"],{
 
 /***/ "./node_modules/@ng-bootstrap/ng-bootstrap/accordion/accordion-config.js":
 /*!*******************************************************************************!*\
@@ -8097,4 +8097,4 @@ function regExpEscape(text) {
 /***/ })
 
 }]);
-//# sourceMappingURL=bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module.js.map
+//# sourceMappingURL=dashboard-dashboard-module~layout-layout-module.js.map

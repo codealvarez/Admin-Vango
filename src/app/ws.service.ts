@@ -168,6 +168,36 @@ export class WebService {
             .pipe(map(res => res));
     }
 
+    getPasajeros() { 
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_pasajeros.aspx";
+        
+        let headers = this.createRequestHeader();
+
+        return this.http.get(serverUrl, { headers: headers })
+            .pipe(map(res => res));
+    }
+
+    getPasajero(idPasajero) { 
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_pasajeros.aspx";
+        
+        let headers = this.createRequestHeader();
+
+        return this.http.get(serverUrl, { params:{idpasajero:idPasajero},headers: headers })
+            .pipe(map(res => res));
+    }
+
+    getPasajerosViaje(idViaje) { 
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_pasajeros.aspx";
+        
+        let headers = this.createRequestHeader();
+
+        return this.http.get(serverUrl, { params:{ idviaje:idViaje}, headers: headers })
+            .pipe(map(res => res));
+    }
+
 
     private createRequestHeader() {
         // set headers here e.g.

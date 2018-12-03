@@ -50,7 +50,7 @@ var ViajesRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [@routerTransition]>\n    <app-page-header [heading]=\"'Viajes'\" [icon]=\"'fa-map-signs'\"></app-page-header>\n    <div class=\"row\">\n        <div class=\"col col-xl-12 col-lg-12\">\n            <div class=\"card mb-3\">\n                <div class=\"card-header\">\n                    Listado de viajes\n                    <!-- <button class=\"btn btn-success pull-right\" [routerLink]=\"['/crearruta']\">Crear ruta</button> -->\n                </div>\n                <div class=\"card-body table-responsive\">\n                    <table class=\"table\">\n                        <thead>\n                        <tr>\n                            <th>#</th>\n                            <th>Ruta</th>\n                            <th>Fecha</th>\n                            <th>Hora</th>\n                            <th>Capacidad</th>\n                            <th>Disponibles</th>\n                            <th>Conductor</th>\n                            <th>Placa</th>\n                            <th>Precio</th>\n                            <th>Estado</th>\n                        </tr>\n                        </thead>\n                        <tbody>\n                        <tr *ngFor=\"let viaje of viajes\">\n                            <th scope=\"row\">{{viaje.idviaje}}</th>\n                            <td><button [routerLink]=\"['/verruta/'+viaje.idruta]\" class=\"btn btn-info btn-sm\">{{viaje.nombreruta}}</button></td>\n                            <td>{{viaje.fecha_viaje}}</td>\n                            <td>{{viaje.hora_viaje}}</td>\n                            <td>{{viaje.capacidad}}</td>\n                            <td>{{viaje.disponibles}}</td>\n                            <td>{{viaje.conductor}}</td>\n                            <td>{{viaje.placa}}</td>\n                            <td>{{viaje.precio}}</td>\n                            <td>{{viaje.estadoviaje}}</td>\n\n                        </tr>\n                        \n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n        \n    </div>\n</div>"
+module.exports = "<div [@routerTransition]>\n    <app-page-header [heading]=\"'Viajes'\" [icon]=\"'fa-map-signs'\"></app-page-header>\n    <div class=\"row\">\n        <div class=\"col col-xl-12 col-lg-12\">\n            <div class=\"card mb-3\">\n                <div class=\"card-header\">\n                    Listado de viajes\n                    <!-- <button class=\"btn btn-success pull-right\" [routerLink]=\"['/crearruta']\">Crear ruta</button> -->\n                </div>\n                <div class=\"card-body table-responsive\">\n                    <table class=\"table\">\n                        <thead>\n                        <tr>\n                            <th>#</th>\n                            <th>Ruta</th>\n                            <th>Fecha</th>\n                            <th>Hora</th>\n                            <th>Capacidad</th>\n                            <th>Disponibles</th>\n                            <th>Pasajeros</th>\n                            <th>Conductor</th>\n                            <th>Placa</th>\n                            <th>Precio</th>\n                            <th>Estado</th>\n                        </tr>\n                        </thead>\n                        <tbody>\n                        <tr *ngFor=\"let viaje of viajes\">\n                            <th scope=\"row\">{{viaje.idviaje}}</th>\n                            <td><button [routerLink]=\"['/verruta/'+viaje.idruta]\" class=\"btn btn-info btn-sm\">{{viaje.nombreruta}}</button></td>\n                            <td>{{viaje.fecha_viaje}}</td>\n                            <td>{{viaje.hora_viaje}}</td>\n                            <td>{{viaje.capacidad}}</td>\n                            <td>{{viaje.disponibles}}</td>\n                            <td><button [routerLink]=\"['/pasajeros/'+viaje.idviaje]\" class=\"btn btn-success btn-sm\">{{viaje.reservados}}</button></td>\n                            <td>{{viaje.conductor}}</td>\n                            <td>{{viaje.placa}}</td>\n                            <td>{{viaje.precio}}</td>\n                            <td>{{viaje.estadoviaje}}</td>\n\n\n                        </tr>\n                        \n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n        \n    </div>\n</div>"
 
 /***/ }),
 
@@ -116,9 +116,12 @@ var ViajesComponent = /** @class */ (function () {
     ViajesComponent.prototype.obtenerViajesRuta = function () {
         var model = this;
         model.myService.getViajesRuta(model.idRuta).subscribe(function (result) {
-            console.log('Listado de viajes de ruta ' + model.idRuta);
-            console.log(result);
             model.viajes = result;
+            for (var i = model.viajes.length - 1; i <= 0; i++) {
+                model.viajes[i].reservados = parseInt(model.viajes[i].capacidad) - parseInt(model.viajes[i].disponibles);
+            }
+            console.log('Listado de viajes de ruta ' + model.idRuta);
+            console.log(model.viajes);
             //this.onGetDataSuccess(result);
         }, function (error) {
             //this.onGetDataError(error);
@@ -127,9 +130,12 @@ var ViajesComponent = /** @class */ (function () {
     ViajesComponent.prototype.obtenerViajesTodos = function () {
         var model = this;
         model.myService.getViajesTodos().subscribe(function (result) {
-            console.log('Listado de viajes');
-            console.log(result);
             model.viajes = result;
+            for (var i = 0; i < model.viajes.length; i++) {
+                model.viajes[i].reservados = parseInt(model.viajes[i].capacidad) - parseInt(model.viajes[i].disponibles);
+            }
+            console.log('Listado de viajes');
+            console.log(model.viajes);
             //this.onGetDataSuccess(result);
         }, function (error) {
             //this.onGetDataError(error);

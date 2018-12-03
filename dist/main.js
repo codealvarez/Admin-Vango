@@ -16,18 +16,6 @@ var map = {
 		"./src/app/layout/blank-page/blank-page.module.ts",
 		"blank-page-blank-page-module"
 	],
-	"./bs-component/bs-component.module": [
-		"./src/app/layout/bs-component/bs-component.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
-		"bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module",
-		"common",
-		"bs-component-bs-component-module"
-	],
-	"./bs-element/bs-element.module": [
-		"./src/app/layout/bs-element/bs-element.module.ts",
-		"common",
-		"bs-element-bs-element-module"
-	],
 	"./charts/charts.module": [
 		"./src/app/layout/charts/charts.module.ts",
 		"common",
@@ -40,43 +28,43 @@ var map = {
 	],
 	"./crearruta/crearruta.module": [
 		"./src/app/layout/crearruta/crearruta.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
+		"crearruta-crearruta-module~dashboard-dashboard-module~layout-layout-module~login-login-module~verrut~b0039877",
 		"common",
 		"crearruta-crearruta-module"
 	],
 	"./dashboard/dashboard.module": [
 		"./src/app/layout/dashboard/dashboard.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
-		"bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module",
+		"crearruta-crearruta-module~dashboard-dashboard-module~layout-layout-module~login-login-module~verrut~b0039877",
+		"dashboard-dashboard-module~layout-layout-module",
 		"common",
 		"dashboard-dashboard-module"
 	],
-	"./form/form.module": [
-		"./src/app/layout/form/form.module.ts",
-		"common",
-		"form-form-module"
-	],
-	"./grid/grid.module": [
-		"./src/app/layout/grid/grid.module.ts",
-		"common",
-		"grid-grid-module"
-	],
 	"./layout/layout.module": [
 		"./src/app/layout/layout.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
-		"bs-component-bs-component-module~dashboard-dashboard-module~layout-layout-module",
+		"crearruta-crearruta-module~dashboard-dashboard-module~layout-layout-module~login-login-module~verrut~b0039877",
+		"dashboard-dashboard-module~layout-layout-module",
 		"common",
 		"layout-layout-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
+		"crearruta-crearruta-module~dashboard-dashboard-module~layout-layout-module~login-login-module~verrut~b0039877",
 		"common",
 		"login-login-module"
 	],
 	"./not-found/not-found.module": [
 		"./src/app/not-found/not-found.module.ts",
 		"not-found-not-found-module"
+	],
+	"./pasajero/pasajero.module": [
+		"./src/app/layout/pasajero/pasajero.module.ts",
+		"common",
+		"pasajero-pasajero-module"
+	],
+	"./pasajeros/pasajeros.module": [
+		"./src/app/layout/pasajeros/pasajeros.module.ts",
+		"common",
+		"pasajeros-pasajeros-module"
 	],
 	"./rutas/rutas.module": [
 		"./src/app/layout/rutas/rutas.module.ts",
@@ -99,7 +87,7 @@ var map = {
 	],
 	"./verruta/verruta.module": [
 		"./src/app/layout/verruta/verruta.module.ts",
-		"bs-component-bs-component-module~crearruta-crearruta-module~dashboard-dashboard-module~layout-layout~929f7968",
+		"crearruta-crearruta-module~dashboard-dashboard-module~layout-layout-module~login-login-module~verrut~b0039877",
 		"common",
 		"verruta-verruta-module"
 	],
@@ -855,6 +843,27 @@ var WebService = /** @class */ (function () {
         var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_conductores_placa.aspx";
         var headers = this.createRequestHeader();
         return this.http.get(serverUrl, { params: { placa: placa }, headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
+    };
+    WebService.prototype.getPasajeros = function () {
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_pasajeros.aspx";
+        var headers = this.createRequestHeader();
+        return this.http.get(serverUrl, { headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
+    };
+    WebService.prototype.getPasajero = function (idPasajero) {
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_pasajeros.aspx";
+        var headers = this.createRequestHeader();
+        return this.http.get(serverUrl, { params: { idpasajero: idPasajero }, headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
+    };
+    WebService.prototype.getPasajerosViaje = function (idViaje) {
+        //listar_viajes_rutas.aspx?idconductor=0&idpasajero=2&estado=PROGRAMADO
+        var serverUrl = "http://ctcarpoolimp.cloudapp.net/carpoolservices/listar_pasajeros.aspx";
+        var headers = this.createRequestHeader();
+        return this.http.get(serverUrl, { params: { idviaje: idViaje }, headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return res; }));
     };
     WebService.prototype.createRequestHeader = function () {

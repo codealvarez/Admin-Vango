@@ -19,10 +19,9 @@ const routes: Routes = [
             { path: 'verruta/:idRuta', loadChildren: './verruta/verruta.module#VerrutaModule' }, 
             { path: 'conductores', loadChildren: './conductores/conductores.module#ConductoresModule' },
             { path: 'conductores/:placa', loadChildren: './conductores/conductores.module#ConductoresModule' },
-            { path: 'forms', loadChildren: './form/form.module#FormModule' },
-            { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
-            { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
-            { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
+            { path: 'pasajeros', loadChildren: './pasajeros/pasajeros.module#PasajerosModule' },
+            { path: 'pasajeros/:idViaje', loadChildren: './pasajeros/pasajeros.module#PasajerosModule' },
+            { path: 'pasajero/:idPasajero', loadChildren: './pasajero/pasajero.module#PasajeroModule' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' }
         ]
     }

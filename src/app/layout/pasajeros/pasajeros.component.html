@@ -1,0 +1,37 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Pasajeros'" [icon]="'fa-map-signs'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Listado de pasajeros
+                    
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombres</th>
+                            <th>Cédula</th>
+                            <th>Correo electrónico</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let pasajero of pasajeros">
+                            <th scope="row">{{pasajero.idpasajero}}</th>
+                            <td>{{pasajero.nombre}}</td>
+                            <td>{{pasajero.cedula}}</td>
+                            <td>{{pasajero.mail}}</td>
+                            <td><button class="btn btn-info" [routerLink]="['/pasajero/'+pasajero.idpasajero]">Ver detalles</button></td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

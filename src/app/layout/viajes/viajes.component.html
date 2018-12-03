@@ -17,6 +17,7 @@
                             <th>Hora</th>
                             <th>Capacidad</th>
                             <th>Disponibles</th>
+                            <th>Pasajeros</th>
                             <th>Conductor</th>
                             <th>Placa</th>
                             <th>Precio</th>
@@ -31,10 +32,12 @@
                             <td>{{viaje.hora_viaje}}</td>
                             <td>{{viaje.capacidad}}</td>
                             <td>{{viaje.disponibles}}</td>
+                            <td><button [routerLink]="['/pasajeros/'+viaje.idviaje]" class="btn btn-success btn-sm">{{viaje.reservados}}</button></td>
                             <td>{{viaje.conductor}}</td>
                             <td>{{viaje.placa}}</td>
                             <td>{{viaje.precio}}</td>
                             <td>{{viaje.estadoviaje}}</td>
+
 
                         </tr>
                         

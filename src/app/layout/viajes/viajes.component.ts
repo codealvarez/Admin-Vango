@@ -35,10 +35,13 @@ export class ViajesComponent implements OnInit {
   obtenerViajesRuta(){
     let model = this;
     model.myService.getViajesRuta(model.idRuta).subscribe((result:any) => {
-      console.log('Listado de viajes de ruta '+model.idRuta);
-      console.log(result);
+      
       model.viajes = result;
-
+      for (var i = model.viajes.length - 1; i <= 0; i++) {
+        model.viajes[i].reservados = parseInt(model.viajes[i].capacidad) - parseInt(model.viajes[i].disponibles);
+      }
+      console.log('Listado de viajes de ruta '+model.idRuta);
+      console.log(model.viajes);
       
         //this.onGetDataSuccess(result);
     }, (error) => {
@@ -48,10 +51,12 @@ export class ViajesComponent implements OnInit {
   obtenerViajesTodos(){
     let model = this;
     model.myService.getViajesTodos().subscribe((result:any) => {
-      console.log('Listado de viajes');
-      console.log(result);
       model.viajes = result;
-
+      for (var i = 0; i < model.viajes.length; i++) {
+        model.viajes[i].reservados = parseInt(model.viajes[i].capacidad) - parseInt(model.viajes[i].disponibles);
+      }
+      console.log('Listado de viajes');
+      console.log(model.viajes);
       
         //this.onGetDataSuccess(result);
     }, (error) => {
